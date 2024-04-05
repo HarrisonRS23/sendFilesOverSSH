@@ -25,5 +25,6 @@ jobs:
             key: ${{ secrets.KEY }}
             source: "src/example.txt"
             overwrite: true
+            timeout: 2
             target: ~/hsheldon/exampleDirectory
   
