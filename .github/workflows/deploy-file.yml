@@ -1,0 +1,29 @@
+name: virtual runner
+run-name: ${{ github.actor }} is sending a file using ssh 🚀
+on: [push]
+
+jobs:
+  build:
+    timeout-minutes: 2
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Build Project
+        run: |
+          echo "building" 
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+      
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@v0.1.7
+        with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            port: ${{ secrets.PORT }}
+            key: ${{ secrets.KEY }}
+            source: example.txt
+            target: examplePackage
+  
