@@ -25,5 +25,5 @@ jobs:
             key: ${{ secrets.KEY }}
             source: "src/example.txt"
             overwrite: true
-            target: exampleDirectory
+            target: ~/hsheldon/exampleDirectory
   
