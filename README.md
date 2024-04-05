@@ -21,3 +21,7 @@ On github repository click settings -> secrets and variables -> actions -> new r
 2.) secret name: USERNAME ; secret value: username for server
 3.) secret name: PORT ; secret value: port for server ( default 22) 
 4.) secret name: KEY ; secret value: copy entire contents of id_rsa (including comments) from .ssh on local machine 
+
+# install docker onto vm
+ssh into server and follow directions for installing docker for a ubuntu machine (follow server distro directions)
+https://docs.docker.com/engine/install/ubuntu/
